@@ -18,6 +18,7 @@ from app import agent as agent_mod  # 你的 app/agent.py
 from app.main import app  # 你的 app/main.py
 
 client = TestClient(app)
+client.__enter__()  # Day7 起 agent 在 lifespan 中初始化，必须触发启动钩子才有实例
 results = []
 
 
